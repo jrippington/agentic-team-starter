@@ -1,0 +1,9 @@
+{
+  "getQuoteResult": "(quoteId: string) => QuoteResult",
+  "QuoteResult": "type",
+  "QuoteResult.coverLevel": "\"third party\" | \"comprehensive\"",
+  "QuoteResult.currency": "\"GBP\"",
+  "QuoteResult.premiumAnnual": "string",
+  "QuoteResult.quoteId": "string",
+  "QuoteResult.validUntil": "string"
+}

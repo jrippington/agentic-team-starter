@@ -1,0 +1,47 @@
+name: Exercises
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  exercise:
+    name: ${{ matrix.folder }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - folder: ch01-required-event-fields
+            command: npm test
+          - folder: ch03-module-boundaries
+            command: npm run check
+          - folder: ch04-invariant-and-duplication
+            command: npm test && npm run check
+          - folder: ch05-replay
+            command: npm test
+          - folder: ch06-interface-diff
+            command: npm run check
+          - folder: ch07-dependency-allowlist
+            command: npm run check
+          - folder: ch07-secret-scan
+            command: npm test
+          - folder: ch08-one-implementation
+            command: npm test
+          - folder: ch10-mock-and-mutation
+            command: npm test
+    defaults:
+      run:
+        working-directory: ${{ matrix.folder }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: ${{ matrix.folder }}/package-lock.json
+      - run: npm ci
+      - run: ${{ matrix.command }}

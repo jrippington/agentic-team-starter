@@ -1,0 +1,23 @@
+{
+  "name": "ch07-secret-scan",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A payment handler that logs, and a secret scan over its code and over the log its test writes.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "test": "vitest run --reporter=verbose && secretlint --no-gitignore \"src/**/*\" \"test/**/*\" \"logs/**/*\""
+  },
+  "devDependencies": {
+    "@secretlint/secretlint-rule-pattern": "13.1.0",
+    "@secretlint/secretlint-rule-preset-recommend": "13.1.0",
+    "@types/node": "22.20.5",
+    "secretlint": "13.1.0",
+    "typescript": "6.0.3",
+    "vite": "8.3.7",
+    "vitest": "5.1.0"
+  }
+}

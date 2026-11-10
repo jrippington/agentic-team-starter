@@ -1,0 +1,8 @@
+{
+  "path": ["src"],
+  "format": ["typescript"],
+  "minTokens": 30,
+  "mode": "mild",
+  "reporters": ["console"],
+  "exitCode": 1
+}

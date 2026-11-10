@@ -1,0 +1,20 @@
+{
+  "name": "ch01-required-event-fields",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A payment handler and the list of fields every event it emits must carry.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "test": "vitest run --reporter=verbose"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "typescript": "6.0.3",
+    "vite": "8.3.7",
+    "vitest": "5.1.0"
+  }
+}

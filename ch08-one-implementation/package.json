@@ -1,0 +1,20 @@
+{
+  "name": "ch08-one-implementation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An interface with one implementation and a factory with one product, and tests that pass with or without them.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "test": "vitest run --reporter=verbose"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "typescript": "6.0.3",
+    "vite": "8.3.7",
+    "vitest": "5.1.0"
+  }
+}

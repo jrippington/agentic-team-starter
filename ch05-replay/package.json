@@ -1,0 +1,23 @@
+{
+  "name": "ch05-replay",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A payment-notification handler on PGlite, with a replay test that delivers the same notification twice.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "test": "vitest run --reporter=verbose"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "0.5.16"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "typescript": "6.0.3",
+    "vite": "8.3.7",
+    "vitest": "5.1.0"
+  }
+}

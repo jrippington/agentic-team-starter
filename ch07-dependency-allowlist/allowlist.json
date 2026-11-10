@@ -1,0 +1,25 @@
+{
+  "packages": {
+    "@types/node": {
+      "reason": "Type definitions for Node's built-in modules, for type-checking the source."
+    },
+    "typescript": {
+      "reason": "The compiler and type checker for the source."
+    },
+    "tsx": {
+      "reason": "Runs the dependency policy, which is written in TypeScript, without a build step."
+    },
+    "esbuild": {
+      "reason": "Turns TypeScript into JavaScript for tsx."
+    },
+    "@esbuild/*": {
+      "reason": "esbuild's prebuilt program, one package for each platform. The lockfile lists them all; npm installs only the one for your machine."
+    },
+    "fsevents": {
+      "reason": "Lets tsx watch files on macOS. Optional, and installed on macOS only."
+    },
+    "undici-types": {
+      "reason": "Type definitions for Node's built-in fetch, used by @types/node."
+    }
+  }
+}

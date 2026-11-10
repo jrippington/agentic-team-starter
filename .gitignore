@@ -1,0 +1,10 @@
+# Installed packages and generated reports
+node_modules/
+coverage/
+
+# PGlite data directories, for an exercise changed to keep its database on disk
+pgdata/
+*.pgdata/
+
+# Logs that tests write
+logs/

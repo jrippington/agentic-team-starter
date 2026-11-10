@@ -1,0 +1,19 @@
+{
+  "name": "ch03-module-boundaries",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Three modules, each with a published interface, and the rule that holds the boundaries between them.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "check": "depcruise src --output-type err-long"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "dependency-cruiser": "18.7.2",
+    "typescript": "6.0.3"
+  }
+}

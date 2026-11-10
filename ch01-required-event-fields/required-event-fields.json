@@ -1,0 +1,4 @@
+{
+  "payment.recorded": ["notificationId", "paymentReference", "quoteId", "policyId", "amountPence"],
+  "payment.failed": ["notificationId", "paymentReference", "quoteId", "policyId", "reason"]
+}

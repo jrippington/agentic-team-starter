@@ -1,0 +1,19 @@
+{
+  "name": "ch07-dependency-allowlist",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A small package and its dependency allowlist, with a policy check that names any package not on the list.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "check": "tsx checks/dependency-policy.ts"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3"
+  }
+}

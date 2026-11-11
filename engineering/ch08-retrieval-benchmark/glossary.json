@@ -1,0 +1,9 @@
+{
+  "entries": [
+    {
+      "term": "expiry",
+      "codeTerms": ["stale", "fresh"],
+      "why": "The business says a quote expires; the code says it goes stale, and stays fresh until then."
+    }
+  ]
+}

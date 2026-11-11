@@ -1,0 +1,13 @@
+{
+  "note": "The verified source for each question, checked by a person who knows the code. Kept apart from the questions, so that nobody tuning a search can change what counts as the right answer.",
+  "answers": {
+    "Q01": { "sources": ["src/quoting/freshness.ts"] },
+    "Q02": { "sources": ["src/policy/premium.ts"] },
+    "Q03": { "sources": ["src/policy/money.ts"] },
+    "Q04": { "sources": ["src/quoting/accept.ts"] },
+    "Q05": { "sources": ["src/documents/schedule.ts"] },
+    "Q06": { "sources": ["src/quoting/accept.ts"] },
+    "Q07": { "sources": ["decisions/0003-quotes-fresh-for-30-days.md"] },
+    "Q08": { "sources": ["version history"] }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "inspect": 3,
+  "questions": [
+    { "id": "Q01", "type": "Where is X defined", "question": "Where is a quote's expiry worked out?" },
+    { "id": "Q02", "type": "Where is X defined", "question": "Where is the annual premium calculated?" },
+    { "id": "Q03", "type": "Where is X defined", "question": "Where is the rounding rule for money?" },
+    { "id": "Q04", "type": "What calls or uses Y", "question": "What calls bindPolicy?" },
+    { "id": "Q05", "type": "What calls or uses Y", "question": "What reads premiumAnnual when a schedule is printed?" },
+    { "id": "Q06", "type": "How do we do Z", "question": "How do we refuse an old quote?" },
+    { "id": "Q07", "type": "Why was W decided", "question": "Why can quotes only be accepted for 30 days?" },
+    { "id": "Q08", "type": "What changed recently in V", "question": "What changed in quote acceptance this month?" }
+  ]
+}

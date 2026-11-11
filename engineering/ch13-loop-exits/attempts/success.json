@@ -1,0 +1,15 @@
+{
+  "note": "An attempt off by one day, then the right change.",
+  "iterations": [
+    {
+      "files": {
+        "src/summary.mjs": "// The one-line summary shown beside a quote, with the last day it can be accepted.\nexport function summarise(quote) {\n  const lastDay = new Date(quote.createdAt.getTime() + 29 * 24 * 60 * 60 * 1000);\n  return `Quote ${quote.id}: £${(quote.premiumPence / 100).toFixed(2)} a year, valid until ${lastDay.toISOString().slice(0, 10)}`;\n}\n"
+      }
+    },
+    {
+      "files": {
+        "src/summary.mjs": "// The one-line summary shown beside a quote, with the last day it can be accepted.\nconst VALID_DAYS = 30;\n\nexport function summarise(quote) {\n  const lastDay = new Date(quote.createdAt.getTime() + VALID_DAYS * 24 * 60 * 60 * 1000);\n  return `Quote ${quote.id}: £${(quote.premiumPence / 100).toFixed(2)} a year, valid until ${lastDay.toISOString().slice(0, 10)}`;\n}\n"
+      }
+    }
+  ]
+}

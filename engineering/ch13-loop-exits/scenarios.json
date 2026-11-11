@@ -1,0 +1,10 @@
+{
+  "note": "Each scenario runs the loop on a fresh copy of start/, with scripted attempts in place of an agent, each written to reach one exit.",
+  "scenarios": [
+    { "attempts": "attempts/success.json", "expected": "success" },
+    { "attempts": "attempts/budget-exhaustion.json", "expected": "budget exhaustion", "iterations": 2 },
+    { "attempts": "attempts/stuck-detection.json", "expected": "stuck detection" },
+    { "attempts": "attempts/boundary-hit.json", "expected": "boundary hit" },
+    { "attempts": "attempts/external-abort.json", "expected": "external abort" }
+  ]
+}

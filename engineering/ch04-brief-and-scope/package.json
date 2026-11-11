@@ -1,0 +1,19 @@
+{
+  "name": "ch04-brief-and-scope",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A task brief whose scope is written as paths, and a scope check that passes a change inside it and refuses one that reaches outside it.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "check": "tsx checks/scope.ts"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3"
+  }
+}

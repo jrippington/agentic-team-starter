@@ -1,0 +1,32 @@
+diff --git a/src/quoting/summary.ts b/src/quoting/summary.ts
+index 8702d5f..3ef69fb 100644
+--- a/src/quoting/summary.ts
++++ b/src/quoting/summary.ts
+@@ -1,6 +1,10 @@
+-import type { Quote } from './quote.ts';
++import { QUOTE_VALID_DAYS, type Quote } from './quote.ts';
+ 
+-// The one-line summary shown beside a quote.
++const DAY_MS = 24 * 60 * 60 * 1000;
++
++// The one-line summary shown beside a quote, with the last day it can be accepted.
+ export function summarise(quote: Quote): string {
+-  return `Quote ${quote.id}: £${(quote.premiumPence / 100).toFixed(2)} a year`;
++  const expires = new Date(quote.createdAt.getTime() + QUOTE_VALID_DAYS * DAY_MS);
++  const premium = (quote.premiumPence / 100).toFixed(2);
++  return `Quote ${quote.id}: £${premium} a year, valid until ${expires.toISOString().slice(0, 10)}`;
+ }
+diff --git a/test/quoting/summary.test.ts b/test/quoting/summary.test.ts
+index 6b88904..f35d5da 100644
+--- a/test/quoting/summary.test.ts
++++ b/test/quoting/summary.test.ts
+@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
+ import { test } from 'node:test';
+ import { summarise } from '../../src/quoting/summary.ts';
+ 
+-test('the summary gives the annual premium in pounds', () => {
++test('the summary gives the annual premium in pounds and the last day to accept', () => {
+   const quote = { id: 'Q-1001', createdAt: new Date('2026-03-02T09:00:00Z'), premiumPence: 41233 };
+-  assert.equal(summarise(quote), 'Quote Q-1001: £412.33 a year');
++  assert.equal(summarise(quote), 'Quote Q-1001: £412.33 a year, valid until 2026-04-01');
+ });

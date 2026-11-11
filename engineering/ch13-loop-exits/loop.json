@@ -1,0 +1,22 @@
+{
+  "name": "summary-expiry",
+  "task": "Make the quote summary show the last day the quote can be accepted, 30 days after it was created, so that every test in test/summary.test.mjs passes. Change only src/.",
+  "budgets": {
+    "iterations": { "value": 3, "rationale": "A change this small is found within a few attempts or the attempts are not converging; a fourth is a person's decision" }
+  },
+  "evaluator": { "command": ["node", "--test", "test/summary.test.mjs"], "passes": "exit status 0" },
+  "protectedEvaluators": ["test/"],
+  "permittedChanges": ["src/"],
+  "stuckDetectors": [
+    { "name": "repetition", "rule": "An attempt leaves exactly the change an earlier iteration left" },
+    { "name": "no improvement", "rule": "Two iterations running end with the same failing tests and the same messages" }
+  ],
+  "exits": {
+    "success": "The evaluator passes. The change goes to review; nothing is merged by the loop",
+    "budget exhaustion": "A budget is spent. A person decides whether to extend it, and why",
+    "stuck detection": "A detector fires. The run stops and asks its open question",
+    "boundary hit": "An attempt changes a protected evaluator or a file outside the permitted changes. The run stops at once, before the evaluator runs",
+    "external abort": "A person creates the file STOP in the working copy. The run stops after the current attempt"
+  },
+  "handOff": ["the trace", "the working copy's state against the start", "the best attempt so far", "the open questions"]
+}

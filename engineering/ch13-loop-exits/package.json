@@ -1,0 +1,19 @@
+{
+  "name": "ch13-loop-exits",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A loop specification and a driver that stops at each of its five exits, with scripted attempts in place of an agent.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "loop": "tsx loop/driver.ts"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3"
+  }
+}

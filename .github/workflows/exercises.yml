@@ -33,6 +33,12 @@ jobs:
             command: npm test
           - folder: ch10-mock-and-mutation
             command: npm test
+          - folder: engineering/ch04-brief-and-scope
+            command: npm run check
+          - folder: engineering/ch08-retrieval-benchmark
+            command: npm run measure
+          - folder: engineering/ch13-loop-exits
+            command: npm run loop
     defaults:
       run:
         working-directory: ${{ matrix.folder }}

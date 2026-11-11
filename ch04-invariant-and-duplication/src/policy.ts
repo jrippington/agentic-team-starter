@@ -19,7 +19,7 @@ export function bindPolicy(policyId: string, unroundedPremium: string): PolicyRe
   return { policyId, premiumAtBinding, adjustments: [], amountOwed: premiumAtBinding };
 }
 
-// Records an adjustment and what the policy now owes. An adjustment that is
+// Records an adjustment and what the policy now owes. Any adjustment that is
 // already recorded, delivered again with the same id, changes nothing.
 export function adjustPolicy(policy: PolicyRecord, adjustment: Adjustment): PolicyRecord {
   if (policy.adjustments.some((recorded) => recorded.id === adjustment.id)) {

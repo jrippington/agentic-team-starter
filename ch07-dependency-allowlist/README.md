@@ -58,13 +58,13 @@ Failed: One problem. Remove the package, or add it to allowlist.json with the re
 it is needed, so that the addition is reviewed as a change of its own.
 ```
 
-`date-fns` brings in no packages of its own. A package that did would have each of those named too, with the package that requires it.
+`date-fns` brings in no packages of its own. Any package that did would have each of those named too, with the package that requires it.
 
 Undo the change with `npm uninstall date-fns`. That puts `package.json` and `package-lock.json` back exactly as they were, and the check passes again.
 
 ## What the check does not catch
 
-- Whether an allowed package is safe. The allowlist approves names, not what a new version of an approved package does. The lockfile pins each version and its integrity hash, which is one reason a change to the lockfile deserves review.
+- Whether an allowed package is safe. The allowlist approves names, not what a new version of an approved package does. The lockfile pins each version and its integrity hash, which is one reason any change to the lockfile deserves review.
 - Code that arrives without a package: copied into the source, fetched by a script, or run with `npx` without being installed.
 - Whether a reason is a good one. The check requires a reason; only a reviewer can judge it. A dependency policy is not a security review.
 - A change to the allowlist itself. Adding a package and its allowlist entry in one change passes the check, so that is the change a reviewer should look for.

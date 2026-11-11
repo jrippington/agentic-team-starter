@@ -1,6 +1,6 @@
 # Required event fields
 
-A payment handler records a payment and emits an event about it. This exercise shows a test that holds the rule "every event of a named type carries the fields listed for it", and a change that breaks the rule while every functional test still passes.
+A payment handler records a payment and emits an event about it. This exercise shows a test that enforces the rule "every event of a named type carries the fields listed for it", and a change that breaks the rule while every functional test still passes.
 
 ## What is here
 
@@ -66,7 +66,7 @@ Put the line back with `git restore src/payment-handler.ts`.
 
 ## What the check does not catch
 
-The check looks for each field; it does not look at what the field holds. A field that is present and useless passes, whether it is empty or holds the wrong identifier. To see this:
+The check looks for each field; it does not look at what the field holds. Any field that is present and useless passes, whether it is empty or holds the wrong identifier. To see this:
 
 1. In the `payment.recorded` event, change the line `policyId: payment.policyId,` to:
 
@@ -77,7 +77,7 @@ The check looks for each field; it does not look at what the field holds. A fiel
 2. Run `npm test`. All four tests pass, although every `payment.recorded` event now carries the payment's own reference where the policy should be.
 3. Run `git restore src/payment-handler.ts`.
 
-The check also misses an event type that is not in `required-event-fields.json`, and a code path that emits an event in a way the test's two notifications do not reach. Review covers these: whoever reviews a change that adds or alters an event type checks the list and the values, and someone traces one real payment from start to finish from time to time.
+The check also misses any event type that is not in `required-event-fields.json`, and any code path that emits an event but that the test's two notifications do not reach. Review covers these: whoever reviews a change that adds or alters an event type checks the list and the values, and someone traces one real payment from start to finish from time to time.
 
 ## In the book
 

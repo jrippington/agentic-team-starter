@@ -3,7 +3,7 @@
 // packages named in package.json and every package in package-lock.json,
 // which includes the packages that those bring in.
 //
-// An entry ending in "/*", such as "@esbuild/*", allows every package in
+// Any entry ending in "/*", such as "@esbuild/*", allows every package in
 // that scope.
 import { readFileSync } from 'node:fs';
 

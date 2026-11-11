@@ -41,7 +41,7 @@ describe('payment notification handler', () => {
     expect(await countRows('payments'), 'payments recorded').toBe(2);
   });
 
-  // The database refuses a payment of zero pence. That refusal stands in for
+  // The database refuses any payment of zero pence. That refusal stands in for
   // any failure between recording the notification and recording the payment.
   it('does not mark a notification as handled when its payment is not recorded', async () => {
     const refused = { ...succeeded, notificationId: 'ntf_1003', amountPence: 0 };

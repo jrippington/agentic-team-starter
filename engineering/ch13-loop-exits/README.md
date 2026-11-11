@@ -86,7 +86,7 @@ Undo the change with `git restore loop.json`.
 ## What the driver does not catch
 
 - Whether a passing change is the right one. The evaluator is only as good as the test; success goes to review, and nothing is merged by the loop.
-- What an attempt does outside the working copy: a network call, a package installed elsewhere, a change to a shared database. The driver sees files; the agent's own settings and the environment have to hold the rest.
+- What an attempt does outside the working copy: a network call, a package installed elsewhere, a change to a shared database. The driver sees files; the agent's own settings and the environment have to cover the rest.
 - Cost and time. This loop's only budget is iterations; a loop run by an agent needs budgets for time and spending too, set where the agent's runtime can count them.
 - Whether the scripted attempts look like an agent's. They show the driver, not an agent: what happens when an attempt weakens a test, not whether an agent would try.
 

@@ -1,6 +1,6 @@
 # A brief's scope, checked
 
-A task brief whose scope is written as paths, and a short program that compares the files a change touches with that scope. A path that ends in `/` covers everything under it. The rule: a change stays inside its brief.
+A task brief whose scope is written as paths, and a short program that compares the files a change touches with that scope. A path that ends in `/` covers everything under it. The rule: every change stays inside its brief.
 
 ## What is here
 
@@ -62,16 +62,16 @@ Failed: 1 of 3 files is outside the brief's scope. Take it out of
 the change, or ask the brief's owner to widen the scope, as a decision of its own.
 ```
 
-A file that the brief neither puts in scope nor out of bounds is refused too, as "not in scope": a brief's scope says what may change, so anything it does not name is outside it.
+Any file that the brief neither puts in scope nor out of bounds is refused too, as "not in scope": a brief's scope says what may change, so anything it does not name is outside it.
 
 Undo the change with `git restore change.patch`, and the check passes again.
 
 ## What the check does not catch
 
 - Whether the change inside the scope is right. A wrong edit to `src/quoting/summary.ts` passes; the brief's acceptance evidence and its tests decide that.
-- A scope drawn too wide when the brief was written. The check holds a change to the brief; it cannot say whether the brief was a good one.
+- A scope drawn too wide when the brief was written. The check keeps a change within the brief; it cannot say whether the brief was a good one.
 - Effects that are not in the patch: a command that changes a database, a file a build generates, a package installed outside the repository.
-- A change to the brief itself. A change that widens the scope and uses the wider scope in one patch should be refused by review: the brief belongs to its owner, and changing it is a decision of its own.
+- A change to the brief itself. Any change that widens the scope and uses the wider scope in one patch should be refused by review: the brief belongs to its owner, and changing it is a decision of its own.
 
 ## In the book
 

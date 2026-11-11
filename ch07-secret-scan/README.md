@@ -75,9 +75,9 @@ Undo the change with `git restore src/capture-payment.ts`, then run `npm test` a
 ## What the check does not catch
 
 - A secret in a form no rule describes: a credential in another format, one split across two log fields or encoded, or a password someone chose.
-- A log the tests do not write. The scan sees the logs of the paths the tests run. A debugging line on another path leaks in production and nowhere here.
+- A log the tests do not write. The scan sees the logs of the paths the tests run. Any debugging line on another path leaks in production and nowhere here.
 - Intent. The scan finds strings that look like secrets; it does not know what the code means to do with them. That needs a security review by a named person.
-- Where a secret has already gone. A scan does not take back a log line that has been shipped. A credential that reached a real log has to be revoked and replaced.
+- Where a secret has already gone. A scan does not take back a log line that has been shipped. Any credential that has reached a real log has to be revoked and replaced.
 
 ## In the book
 

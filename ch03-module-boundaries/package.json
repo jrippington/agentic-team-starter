@@ -2,7 +2,7 @@
   "name": "ch03-module-boundaries",
   "version": "1.0.0",
   "private": true,
-  "description": "Three modules, each with a published interface, and the rule that holds the boundaries between them.",
+  "description": "Three modules, each with a published interface, and the rule that enforces the boundaries between them.",
   "license": "MIT",
   "type": "module",
   "engines": {

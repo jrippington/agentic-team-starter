@@ -1,7 +1,7 @@
 // The interface diff. It compares Quoting's published interface with the
-// snapshot taken at the last release. A published interface may grow, so an
-// added export or member passes. A removed or renamed one fails, and so does
-// one whose type has changed, because a consumer may still depend on it.
+// snapshot taken at the last release. A published interface may grow, so any
+// added export or member passes. Any removed or renamed one fails, and so does
+// any whose type has changed, because a consumer may still depend on it.
 //
 //   npm run check      compare the published interface with the snapshot
 //   npm run snapshot   record the published interface as the new snapshot
@@ -11,7 +11,7 @@ import ts from 'typescript';
 const PUBLISHED = 'src/quote-result.ts';
 const SNAPSHOT = 'snapshot/quote-result.json';
 
-// Each exported name, and each member of an exported type, with its type as text.
+// Each exported name, and each member of each exported type, with its type as text.
 function readPublishedInterface(file: string): Record<string, string> {
   const program = ts.createProgram([file], { strict: true, noEmit: true });
   const checker = program.getTypeChecker();

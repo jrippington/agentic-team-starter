@@ -103,8 +103,8 @@ Put the exercise back as it started with `git restore src test`.
 
 ## What the check does not catch
 
-- A test that passes for the wrong reason. In the test data, the latest version of the premium is also the highest, so a query that returned the highest premium would pass too.
-- Assumptions shared by the test and the code. If whoever wrote the query also wrote the test, believing that version 1 was the current one, the query and the expected value would be wrong the same way, and the test would pass. Someone other than the code's author writes or reviews the expected answer.
+- A test that passes for the wrong reason. In the test data, the latest version of the premium is also the highest, so any query that returned the highest premium would pass too.
+- Assumptions shared by the test and the code. If whoever wrote the query also wrote the test, believing that version 1 was the current one, the query and the expected value would be wrong in the same way, and the test would pass. Someone other than the code's author writes or reviews the expected answer.
 - What a test should use instead of its mock. Breaking the real thing shows that a test cannot fail; it does not say how to fix the test. A mock is right for what you do not control, behind your own interface, such as an outside service. It is wrong for the thing the test exists to check, which here is the query.
 
 ## In the book

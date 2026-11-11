@@ -1,6 +1,6 @@
 # Module boundaries
 
-Three modules, each with one published file, and the structural rule that holds the boundaries between them: a module may import another module only through that module's `index.ts`, and no chain of imports may lead back to where it started. dependency-cruiser checks the rule.
+Three modules, each with one published file, and the structural rule that enforces the boundaries between them: a module may import another module only through that module's `index.ts`, and no chain of imports may lead back to where it started. dependency-cruiser checks the rule.
 
 ## What is here
 
@@ -51,7 +51,7 @@ The task is to show the indicative annual premium on the quote summary. The shor
 3. In `buildQuoteSummary`, change `priceQuote(` to `calculatePremium(`.
 4. Run `npm run check`.
 
-The code still compiles, and the summary still shows a premium. It is the wrong one: the figure before Policy's rounding, not the premium Policy would bind.
+The code still compiles, and the summary still shows a premium. It is the wrong one: the figure before Policy's rounding, not the premium at which Policy would bind the quote.
 
 ## What the check prints
 
@@ -109,7 +109,7 @@ Undo the change with `git restore src/policy/index.ts`.
 
 ## What the check does not catch
 
-- Whether a boundary is in the right place. The rule holds the boundaries you drew; a design review by someone who knows the domain decides whether they are drawn well.
+- Whether a boundary is in the right place. The rule enforces the boundaries you drew; a design review by someone who knows the domain decides whether they are drawn well.
 - Which module may depend on which. This rule checks how one module imports another, not whether it may: Policy importing Documents through its `index.ts` would pass, because it makes no cycle. A complete boundary rule also lists, for each module, the modules it may use. Here, Policy should use neither of the others.
 - Whether two things belong together. No tool knows that two pieces of code change together; a change history is a hint to look, not a check.
 - The same dependency made another way: by copying the internal code instead of importing it, by reading another module's tables in the database, or by loading a module by name while the program runs.

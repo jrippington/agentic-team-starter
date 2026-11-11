@@ -1,6 +1,6 @@
 # Interface diff
 
-Quoting publishes a quote result that other modules read, Documents among them. This exercise compares the published type with a snapshot of it taken at the last release. The rule: a published interface changes only by addition. The diff accepts an added field and refuses a removed, renamed, or retyped one. Then the exercise makes the same rename safely, by expand and contract.
+Quoting publishes a quote result that other modules read, Documents among them. This exercise compares the published type with a snapshot of it taken at the last release. The rule: a published interface changes only by addition. The diff accepts any added field and refuses any removed, renamed, or retyped one. Then the exercise makes the same rename safely, by expand and contract.
 
 ## What is here
 

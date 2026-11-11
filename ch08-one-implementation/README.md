@@ -89,8 +89,8 @@ Put the files back with `git restore src`.
 ## The questions a reviewer asks
 
 1. Is there a second use now, not one imagined for later? Here there is one product, priced one way.
-2. If it is a guard, which invariant or trust boundary does it protect? A guard that protects neither is noise.
-3. If it is a layer, what does it translate or protect? A layer that does neither passes calls through, adds a step to every call, and hides the real one.
+2. If it is a guard, which invariant or trust boundary does it protect? Any guard that protects neither is noise.
+3. If it is a layer, what does it translate or protect? Any layer that does neither passes calls through, adds a step to every call, and hides the real one.
 
 When a second implementation arrives, adding the interface takes minutes. Until then, the interface and the factory are code everyone has to read for nothing. Keep one where it is a real seam: where a test needs to put something in its place, or where it stands in front of an outside service.
 

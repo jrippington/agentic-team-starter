@@ -4,7 +4,7 @@ import { roundToPence } from './internal/rounding.ts';
 
 export type { PremiumRequest };
 
-// Prices a quote: the premium Policy would bind, rounded to the penny.
+// Prices a quote: the premium at which Policy would bind it, rounded to the penny.
 export function priceQuote(request: PremiumRequest): number {
   return roundToPence(calculatePremium(request));
 }

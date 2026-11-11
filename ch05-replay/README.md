@@ -113,7 +113,7 @@ Run `git restore src/notification-handler.ts` to finish.
 
 ## What the check does not catch
 
-- Order. A "failed" notice that arrives after the "succeeded" notice for the same payment is a different notification, with its own identifier, so this handler records both. Which one wins is a separate rule, and it needs an ordering test of its own.
+- Order. Any "failed" notice that arrives after the "succeeded" notice for the same payment is a different notification, with its own identifier, so this handler records both. Which one wins is a separate rule, and it needs an ordering test of its own.
 - Two deliveries at the same moment. PGlite gives the tests one connection, so they deliver one notification after another. The primary key on `handled_notifications` still lets only one of two simultaneous inserts succeed, but showing that needs a test with two connections to a full PostgreSQL server, with the order of the steps under the test's control.
 - The choice of key. A key taken from the wrong field would pass all three tests: the payment reference, say, when one payment can have several notifications. Whether the provider's notification identifier really is the same on every delivery is a question for the provider's documentation, not for a test.
 - More generally, a clean run is weak evidence. The tests run the deliveries someone thought of. Whoever reviews a change to an entry point like this one checks it against the rules for repeated and late arrivals.

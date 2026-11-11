@@ -1,13 +1,13 @@
 # Invariant and duplication
 
-Two checks on a small policy record. A property-based test holds the premium invariant: for each policy, the amount Policy records as owed equals the premium at binding plus every adjustment made since, each counted exactly once. A duplication check holds the rule that the rounding rule has one home, in Money.
+Two checks on a small policy record. A property-based test enforces the premium invariant: for each policy, the amount Policy records as owed equals the premium at binding plus every adjustment made since, each counted exactly once. A duplication check enforces the rule that the rounding rule has one home, in Money.
 
 ## What is here
 
 | File | What it holds |
 |---|---|
 | `src/money.ts` | Money, an amount held as a whole number of pence, and `roundHalfEven`, the rounding rule. Half to even: 412.325 becomes 412.32, 412.335 becomes 412.34, and 412.3333 becomes 412.33 |
-| `src/policy.ts` | The policy record. `bindPolicy` rounds the premium through Money; `adjustPolicy` records an adjustment once, however many times it is delivered |
+| `src/policy.ts` | The policy record. `bindPolicy` rounds the premium through Money; `adjustPolicy` records each adjustment once, however many times it is delivered |
 | `test/money.test.ts`, `test/policy.test.ts` | Tests by example |
 | `test/premium-invariant.test.ts` | The property-based test, written with fast-check. It generates premiums and adjustments, delivers some adjustments twice, and asserts the invariant sentence |
 | `.jscpd.json` | The duplication check's settings: TypeScript files in `src/`, clones of 30 tokens or more, mild mode |
@@ -135,7 +135,7 @@ Undo the change by deleting `src/amount-to-collect.ts`.
 
 ## What the checks do not catch
 
-- Whether the property states the real invariant. A property that makes only one adjustment per policy passes with the planted bug, and so does one that works out the expected amount with the same code it is testing. The owner of the business rule, reading the sentence and the generators, is the one who can tell.
+- Whether the property states the real invariant. Any property that makes only one adjustment per policy passes with the planted bug, and so does any that works out the expected amount with the same code it is testing. The owner of the business rule, reading the sentence and the generators, is the one who can tell.
 - A rule rewritten by hand. The duplication check finds copied tokens, not copied meaning: `Math.round(Number(amount) * 100)` in Payments would be a second home for the rounding rule, and the check would not see it.
 - A copy shorter than 30 tokens, or one changed in so many places that no run of 30 tokens survives.
 - An aggregate drawn too large or too small. You find out when changes start waiting on each other, or when the data stops agreeing.

@@ -1,5 +1,5 @@
 // Quoting's published quote result. Other modules, Documents among them, read
-// these fields, so a change to them is a change to a contract.
+// these fields, so any change to them is a change to a contract.
 export interface QuoteResult {
   quoteId: string;
   coverLevel: 'third party' | 'comprehensive';

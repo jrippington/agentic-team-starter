@@ -1,0 +1,19 @@
+diff --git a/checks/residual-judgement-register.json b/checks/residual-judgement-register.json
+index 404c99e..5998b28 100644
+--- a/checks/residual-judgement-register.json
++++ b/checks/residual-judgement-register.json
+@@ -24,6 +24,14 @@
+       "reviewer": "The rule's owner, who approves the entry",
+       "review": "Review of the change that adds the allowlist entry",
+       "when": "On every change to checks/dependency-allowlist.json"
++    },
++    {
++      "id": "invitation-wording",
++      "what": "Whether the wording of an invitation is right for the person it is sent to",
++      "whyNotChecked": "A test can say that a greeting has a name in it, not whether it reads well",
++      "reviewer": "",
++      "review": "Review of the change that adds or changes the wording",
++      "when": "On every change to an invitation's wording"
+     }
+   ]
+ }

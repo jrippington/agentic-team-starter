@@ -1,0 +1,11 @@
+{
+  "name": "tidy-text",
+  "version": "2.1.0",
+  "description": "A stand-in package for the planted change: it is not on the allowlist, and it brings in a second package.",
+  "license": "MIT",
+  "type": "module",
+  "main": "index.js",
+  "dependencies": {
+    "text-case": "file:../text-case"
+  }
+}

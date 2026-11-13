@@ -1,0 +1,4 @@
+{
+  "check": "telemetry-contract",
+  "change": "The contact.added event carries the contact's name as well as its identifier."
+}

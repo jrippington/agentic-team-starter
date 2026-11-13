@@ -1,0 +1,6 @@
+{
+  "description": "The modules, one folder each under src/, what each does, and the modules each may use. A module uses another only through that module's index.ts. Every module may use src/lib, which uses no module. A folder under src/ that is not listed here, other than src/lib, fails the module-boundaries check as soon as it imports anything in src/.",
+  "modules": {
+    "contacts": { "what": "Keeps the list of contacts", "mayUse": [] }
+  }
+}

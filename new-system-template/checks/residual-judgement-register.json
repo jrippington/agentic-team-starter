@@ -1,0 +1,29 @@
+{
+  "description": "What no check covers, why, who reviews it, in which review and when. Every entry needs all five; an entry missing one fails the residual-judgement-register check. Add an entry whenever you find something a check cannot see that someone must still judge.",
+  "entries": [
+    {
+      "id": "module-boundary-placement",
+      "what": "Whether each module boundary is in the right place",
+      "whyNotChecked": "The check enforces the boundaries in the module map; no tool knows the business's language well enough to say where they should be",
+      "reviewer": "A design reviewer who knows the domain",
+      "review": "Design review of the change",
+      "when": "On every change that adds, splits or merges a module, or adds a line to the module map"
+    },
+    {
+      "id": "personal-data-in-events",
+      "what": "Whether each event field is marked correctly as identifying a person or not, and whether each event type's retention period is one the organisation may keep",
+      "whyNotChecked": "The test holds events to the contract; it cannot tell what a field means or what the law allows",
+      "reviewer": "The owner of the data, with the organisation's data protection officer",
+      "review": "Review of the change to the telemetry contract",
+      "when": "On every change that adds an event type or a field to the telemetry contract"
+    },
+    {
+      "id": "allowlisted-package-safety",
+      "what": "Whether a package on the dependency allowlist is safe to use",
+      "whyNotChecked": "The allowlist check is a policy check: it says whether a package was approved, not whether it is safe",
+      "reviewer": "The rule's owner, who approves the entry",
+      "review": "Review of the change that adds the allowlist entry",
+      "when": "On every change to checks/dependency-allowlist.json"
+    }
+  ]
+}

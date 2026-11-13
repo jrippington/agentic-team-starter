@@ -1,0 +1,8 @@
+diff --git a/src/contacts/internal/mail.ts b/src/contacts/internal/mail.ts
+new file mode 100644
+index 0000000..e176ab1
+--- /dev/null
++++ b/src/contacts/internal/mail.ts
+@@ -0,0 +1,2 @@
++// The mail service's key, for trying invitations by email on a laptop.
++export const mailServiceKey = 'svc_live_FAKEFAKEFAKEFAKEFAKEFAKE';

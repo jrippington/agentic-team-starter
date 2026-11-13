@@ -1,0 +1,15 @@
+{
+  "description": "Third-party code the project may use, and why. Every package that ships with the application is listed under runtime, including the packages its dependencies bring in. Tools used only to build and check the code are listed under tools by their own name. Adding an entry is a rule change, reviewed by the rule's owner, in a change of its own.",
+  "runtime": {},
+  "tools": {
+    "@secretlint/secretlint-rule-pattern": "The secret scan's pattern for the project's own credentials.",
+    "@secretlint/secretlint-rule-preset-recommend": "The secret scan's standard patterns.",
+    "@types/node": "Type definitions for Node's built-in modules.",
+    "dependency-cruiser": "The module-boundaries check.",
+    "secretlint": "The secret scan.",
+    "tsx": "Runs the checks, which are written in TypeScript, without a build step.",
+    "typescript": "The compiler and type checker.",
+    "vite": "Vitest's build tool, named so that npm installs the version Vitest was tested with.",
+    "vitest": "The test runner."
+  }
+}

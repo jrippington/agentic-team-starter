@@ -1,6 +1,6 @@
 # Agentic team starter
 
-Small, separate exercises that accompany *Architecture for the Agentic Team*, and three small examples for the methods in *Engineering the Agentic Team*. Each exercise shows one architectural rule and the check that enforces it; each example shows one method's tool at work. You run it and see it pass, make the change the rule or the method guards against, and read what it prints. Then you read what it cannot see, because every check has a blind spot, and each README names it.
+Small, separate exercises that accompany *Architecture for the Agentic Team*, three small examples for the methods in *Engineering the Agentic Team*, and a template for starting a new system with the first book's checks switched on. Each exercise shows one architectural rule and the check that enforces it; each example shows one method's tool at work. You run it and see it pass, make the change the rule or the method guards against, and read what it prints. Then you read what it cannot see, because every check has a blind spot, and each README names it.
 
 The exercises are written in TypeScript and run on Node.js. The code borrows its names from a small insurance system with four modules: Quoting, Policy, Payments, and Documents. None of the exercises needs a database server: the two that use PostgreSQL run PGlite, a build of PostgreSQL that runs inside Node.
 
@@ -48,15 +48,23 @@ In `engineering/`, one folder each, for a reader of *Engineering the Agentic Tea
 | `engineering/ch08-retrieval-benchmark` | 8 | A retrieval benchmark over a small codebase, scoring lexical search by type of question, with and without a glossary entry | `npm run measure` |
 | `engineering/ch13-loop-exits` | 13 | A loop specification and a driver that stops at each of its five exits, with scripted attempts in place of an agent | `npm run loop` |
 
+## The starting template
+
+`new-system-template/` is not an exercise. It is a small project to copy when you start a new system, with the architectural rules of *Architecture for the Agentic Team* checked from the first change: one example module, the module map, the dependency allowlist, the secret scan, a telemetry contract, budgets, protected paths, waivers, the residual judgement register, a decision record and a rule card to copy and one of each filled in, a blank intent page, instructions for coding agents, one verification command and a continuous integration workflow. It also holds one deliberately bad change for each check, and a command that shows each check failing on its change. Its README says how to start a project from it.
+
+| Folder | What it holds | Command |
+|---|---|---|
+| `new-system-template` | A starting point for a new system, with every check switched on | `npm run verify`, then `npm run prove` |
+
 ## Each exercise stands alone
 
-No exercise or example uses another's code or builds on another's result, so you can start with any of them. Each folder has its own dependencies, pinned to exact versions in its `package.json` and `package-lock.json`, and any folder copied somewhere else still runs.
+No exercise, example or template uses another's code or builds on another's result, so you can start with any of them. Each folder has its own dependencies, pinned to exact versions in its `package.json` and `package-lock.json`, and any folder copied somewhere else still runs.
 
 ## Recorded runs
 
-Each exercise and example keeps the runs its README describes in `observed/RUNS.md`: the command, the tools and their versions, Node.js, the operating system, the date, and the output. Your timings will differ, and so will anything random, such as a property-based test's seed. If your output differs in some other way, the recorded run shows what was seen, and under which versions.
+Each exercise and example, and the template, keeps the runs its README describes in `observed/RUNS.md`: the command, the tools and their versions, Node.js, the operating system, the date, and the output. Your timings will differ, and so will anything random, such as a property-based test's seed. If your output differs in some other way, the recorded run shows what was seen, and under which versions.
 
-The workflow in `.github/workflows/exercises.yml` installs and runs every exercise and example on each push to `main`, so the starting state of each one is known to pass.
+The workflow in `.github/workflows/exercises.yml` installs and runs every exercise, example and the template on each push to `main`, so the starting state of each one is known to pass.
 
 ## Licence
 

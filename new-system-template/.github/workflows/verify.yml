@@ -1,0 +1,33 @@
+# Runs every check on each push to main and on each pull request, once this
+# folder is the root of its own repository. GitHub runs workflows only from
+# the .github folder at a repository's root.
+name: Verify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: npm run verify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          # The protected-paths check compares the change with its base, so the history must be fetched.
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Run every check
+        env:
+          VERIFY_BASE: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+        run: npm run verify
+      - name: Show that every check can still fail
+        run: npm run prove

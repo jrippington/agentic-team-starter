@@ -1,0 +1,4 @@
+{
+  "check": "protected-paths",
+  "change": "The contact's name is added to the contact.added event, and to the telemetry contract's list of that event's fields, in the same change."
+}

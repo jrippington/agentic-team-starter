@@ -1,0 +1,67 @@
+diff --git a/package-lock.json b/package-lock.json
+index 4e941fd..87024ac 100644
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -8,6 +8,9 @@
+       "name": "new-system-template",
+       "version": "1.0.0",
+       "license": "MIT",
++      "dependencies": {
++        "tidy-text": "file:planted/unlisted-package/tidy-text"
++      },
+       "devDependencies": {
+         "@secretlint/secretlint-rule-pattern": "13.1.0",
+         "@secretlint/secretlint-rule-preset-recommend": "13.1.0",
+@@ -2884,6 +2887,10 @@
+         "url": "https://github.com/sponsors/sindresorhus"
+       }
+     },
++    "node_modules/text-case": {
++      "resolved": "planted/unlisted-package/text-case",
++      "link": true
++    },
+     "node_modules/text-table": {
+       "version": "0.2.0",
+       "resolved": "https://registry.npmjs.org/text-table/-/text-table-0.2.0.tgz",
+@@ -2907,6 +2914,10 @@
+         "url": "https://bevry.me/fund"
+       }
+     },
++    "node_modules/tidy-text": {
++      "resolved": "planted/unlisted-package/tidy-text",
++      "link": true
++    },
+     "node_modules/tinybench": {
+       "version": "6.2.3",
+       "resolved": "https://registry.npmjs.org/tinybench/-/tinybench-6.2.3.tgz",
+@@ -3315,6 +3326,17 @@
+       "engines": {
+         "node": ">=20.11"
+       }
++    },
++    "planted/unlisted-package/text-case": {
++      "version": "1.4.2",
++      "license": "MIT"
++    },
++    "planted/unlisted-package/tidy-text": {
++      "version": "2.1.0",
++      "license": "MIT",
++      "dependencies": {
++        "text-case": "file:../text-case"
++      }
+     }
+   }
+ }
+diff --git a/package.json b/package.json
+index fddb499..75867c7 100644
+--- a/package.json
++++ b/package.json
+@@ -23,5 +23,8 @@
+     "typescript": "6.0.3",
+     "vite": "8.3.7",
+     "vitest": "5.1.0"
++  },
++  "dependencies": {
++    "tidy-text": "file:planted/unlisted-package/tidy-text"
+   }
+ }

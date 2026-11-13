@@ -1,0 +1,13 @@
+{
+  "description": "Files that decide whether a change passes. Changing one changes what the project enforces, not what the code does, so a change to any of them is a change of its own, reviewed by the rule's owner, with a decision record. Paths are given from this folder; a path ending in / covers everything under it.",
+  "paths": [
+    "checks/",
+    "test/checks/",
+    "rule-cards/",
+    "planted/",
+    ".secretlintrc.json",
+    "tsconfig.json",
+    "vitest.config.ts",
+    ".github/"
+  ]
+}

@@ -1,0 +1,4 @@
+{
+  "check": "dependency-allowlist",
+  "change": "A package for tidying text, which is not on the allowlist and brings in a second package, is added to the application's dependencies."
+}

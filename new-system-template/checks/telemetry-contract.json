@@ -1,0 +1,12 @@
+{
+  "description": "Every structured event type, every field an event of that type may carry, whether the field is required, whether it identifies a person, and how many days events of that type are kept. An event of a type not listed here, or with a field not listed for its type, fails the telemetry contract test. A field identifies a person if it names one or leads to one through the system's records, as an identifier for a contact does.",
+  "eventTypes": {
+    "contact.added": {
+      "keptForDays": 90,
+      "fields": {
+        "correlationId": { "required": true, "identifiesAPerson": false },
+        "contactId": { "required": true, "identifiesAPerson": true }
+      }
+    }
+  }
+}

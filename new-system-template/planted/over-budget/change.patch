@@ -1,0 +1,22 @@
+diff --git a/src/contacts/index.ts b/src/contacts/index.ts
+index 836800b..39ef213 100644
+--- a/src/contacts/index.ts
++++ b/src/contacts/index.ts
+@@ -16,11 +16,14 @@ export function createContactsModule(): ContactsModule {
+   const store = createContactStore();
+   return {
+     add(name, email, correlationId) {
+-      const contact: Contact = { id: randomUUID(), name: tidyName(name), email: email.trim().toLowerCase() };
++      const contact: Contact = { id: randomUUID(), name: name.trim(), email: email.trim().toLowerCase() };
+       store.save(contact);
++      // Tidy the name once the contact is saved, and save the tidied contact over the first.
++      const tidied: Contact = { ...contact, name: tidyName(contact.name) };
++      store.save(tidied);
+       // The event names the contact by its identifier only, never by name or email.
+-      recordEvent('contact.added', { correlationId, contactId: contact.id });
+-      return contact;
++      recordEvent('contact.added', { correlationId, contactId: tidied.id });
++      return tidied;
+     },
+ 
+     find(id) {

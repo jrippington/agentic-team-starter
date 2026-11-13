@@ -1,0 +1,29 @@
+diff --git a/checks/telemetry-contract.json b/checks/telemetry-contract.json
+index 4c19c50..6dea353 100644
+--- a/checks/telemetry-contract.json
++++ b/checks/telemetry-contract.json
+@@ -5,7 +5,8 @@
+       "keptForDays": 90,
+       "fields": {
+         "correlationId": { "required": true, "identifiesAPerson": false },
+-        "contactId": { "required": true, "identifiesAPerson": true }
++        "contactId": { "required": true, "identifiesAPerson": true },
++        "name": { "required": false, "identifiesAPerson": true }
+       }
+     }
+   }
+diff --git a/src/contacts/index.ts b/src/contacts/index.ts
+index 836800b..3b9c037 100644
+--- a/src/contacts/index.ts
++++ b/src/contacts/index.ts
+@@ -18,8 +18,8 @@ export function createContactsModule(): ContactsModule {
+     add(name, email, correlationId) {
+       const contact: Contact = { id: randomUUID(), name: tidyName(name), email: email.trim().toLowerCase() };
+       store.save(contact);
+-      // The event names the contact by its identifier only, never by name or email.
+-      recordEvent('contact.added', { correlationId, contactId: contact.id });
++      // The contact's name makes the event easier to read in the logs.
++      recordEvent('contact.added', { correlationId, contactId: contact.id, name: contact.name });
+       return contact;
+     },
+ 

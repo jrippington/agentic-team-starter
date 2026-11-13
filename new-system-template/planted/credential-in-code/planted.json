@@ -1,0 +1,4 @@
+{
+  "check": "no-secrets",
+  "change": "A key for a mail service is written into the code, for trying invitations on a laptop."
+}

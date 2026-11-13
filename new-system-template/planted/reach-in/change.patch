@@ -1,0 +1,12 @@
+diff --git a/src/invitations/index.ts b/src/invitations/index.ts
+new file mode 100644
+index 0000000..4cc256a
+--- /dev/null
++++ b/src/invitations/index.ts
+@@ -0,0 +1,6 @@
++// Invitations: the line that greets a contact by name.
++import { tidyName } from '../contacts/internal/contact-store.ts';
++
++export function greeting(name: string): string {
++  return `Dear ${tidyName(name)},`;
++}

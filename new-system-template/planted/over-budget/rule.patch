@@ -1,0 +1,12 @@
+diff --git a/checks/budgets.json b/checks/budgets.json
+index 63e37d3..081a5a0 100644
+--- a/checks/budgets.json
++++ b/checks/budgets.json
+@@ -1,4 +1,6 @@
+ {
+   "description": "What each path may spend, counted in a test: for each path, the most calls of each counted kind it may make. Empty until you set the first budget. The paths a budget may name, and the code each runs, are in test/checks/performance-budgets.test.ts.",
+-  "paths": {}
++  "paths": {
++    "add-contact": { "calls": { "contacts.save": 1 } }
++  }
+ }

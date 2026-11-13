@@ -1,0 +1,4 @@
+{
+  "description": "Recorded exceptions to a rule, each with the rule, the exception, its owner and the date it expires. No waiver, no exception. A waiver still listed after its expiry fails the waivers-expire check.",
+  "waivers": []
+}

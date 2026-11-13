@@ -39,6 +39,8 @@ jobs:
             command: npm run measure
           - folder: engineering/ch13-loop-exits
             command: npm run loop
+          - folder: new-system-template
+            command: npm run verify && npm run prove
     defaults:
       run:
         working-directory: ${{ matrix.folder }}

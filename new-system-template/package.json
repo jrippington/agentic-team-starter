@@ -1,0 +1,27 @@
+{
+  "name": "new-system-template",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A starting point for a new TypeScript project with its architectural rules checked from the first change.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "verify": "tsx checks/verify.ts",
+    "prove": "tsx checks/prove.ts",
+    "test": "vitest run --project tests"
+  },
+  "devDependencies": {
+    "@secretlint/secretlint-rule-pattern": "13.1.0",
+    "@secretlint/secretlint-rule-preset-recommend": "13.1.0",
+    "@types/node": "22.20.5",
+    "dependency-cruiser": "18.7.2",
+    "secretlint": "13.1.0",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3",
+    "vite": "8.3.7",
+    "vitest": "5.1.0"
+  }
+}

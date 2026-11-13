@@ -1,0 +1,4 @@
+{
+  "check": "performance-budgets",
+  "change": "With a budget of one save for adding a contact, adding a contact saves it twice: once as given and once with its name tidied."
+}

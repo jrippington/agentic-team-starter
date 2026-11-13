@@ -1,0 +1,4 @@
+{
+  "check": "module-boundaries",
+  "change": "A new module, invitations, imports the contacts module's internal tidyName instead of using the contacts module's index.ts, and is not in the module map."
+}

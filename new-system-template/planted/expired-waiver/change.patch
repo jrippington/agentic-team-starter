@@ -1,0 +1,17 @@
+diff --git a/checks/waivers.json b/checks/waivers.json
+index debfe9c..264c78a 100644
+--- a/checks/waivers.json
++++ b/checks/waivers.json
+@@ -1,4 +1,11 @@
+ {
+   "description": "Recorded exceptions to a rule, each with the rule, the exception, its owner and the date it expires. No waiver, no exception. A waiver still listed after its expiry fails the waivers-expire check.",
+-  "waivers": []
++  "waivers": [
++    {
++      "rule": "performance-budgets",
++      "exception": "add-contact may save a contact twice while the contact store is replaced",
++      "owner": "The owner of the contacts module",
++      "expires": "2026-06-30"
++    }
++  ]
+ }

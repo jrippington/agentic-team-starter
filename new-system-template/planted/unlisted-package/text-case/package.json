@@ -1,0 +1,8 @@
+{
+  "name": "text-case",
+  "version": "1.4.2",
+  "description": "A stand-in package, brought in by tidy-text.",
+  "license": "MIT",
+  "type": "module",
+  "main": "index.js"
+}

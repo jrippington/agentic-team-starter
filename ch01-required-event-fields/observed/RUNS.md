@@ -86,7 +86,7 @@ AssertionError: payment.recorded is missing required fields: expected [ 'policyI
    Duration  90ms (import 36%, transform 28%, tests 23%, worker 13%)
 ```
 
-## Run 3: the blind spot
+## Run 3: what the check misses
 
 - Command: `npm test`
 - Change: In `src/payment-handler.ts`, the `payment.recorded` event's line changed to `policyId: payment.paymentReference,`, so the field is present and holds the wrong identifier.

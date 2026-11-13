@@ -1,6 +1,6 @@
 # Agentic team starter
 
-Small, separate exercises that accompany *Architecture for the Agentic Team*, three small examples for the methods in *Engineering the Agentic Team*, and a template for starting a new system with the first book's checks switched on. Each exercise shows one architectural rule and the check that enforces it; each example shows one method's tool at work. You run it and see it pass, make the change the rule or the method guards against, and read what it prints. Then you read what it cannot see, because every check has a blind spot, and each README names it.
+Small, separate exercises that accompany *Architecture for the Agentic Team*, three small examples for the methods in *Engineering the Agentic Team*, and a template for starting a new system with the first book's checks switched on. Each exercise shows one architectural rule and the check that enforces it; each example shows one method's tool at work. You run it and see it pass, make the change the rule or the method guards against, and read what it prints. Then you read what it cannot detect: every check misses some faults, and each README names the ones its check misses.
 
 The exercises are written in TypeScript and run on Node.js. The code borrows its names from a small insurance system with four modules: Quoting, Policy, Payments, and Documents. None of the exercises needs a database server: the two that use PostgreSQL run PGlite, a build of PostgreSQL that runs inside Node.
 
